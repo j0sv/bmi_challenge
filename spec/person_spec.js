@@ -13,9 +13,16 @@ describe("Person", function() {
     expect(person.height).toEqual(186);
   });
 
-  it("should calculate BMI value", function() {
+  it("should calculate BMI value using metric", function() {
     person.calculate_bmi('met');
     expect(person.bmiValue).toEqual(26.01);
+  });
+
+  it("should calculate BMI value using imperical", function() {
+    person.weight=198;
+    person.height=72;
+    person.calculate_bmi('imp');
+    expect(person.bmiValue).toEqual(26.85);
   });
 
   it("should have a BMI Message", function() {
