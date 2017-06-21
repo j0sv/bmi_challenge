@@ -1,0 +1,13 @@
+body {
+  background-color: lightblue;
+  background-image: url("./images/bg.jpg");
+}
+
+.container {
+  padding-left: 20px;
+  border: 1px solid black;
+  margin: 50px;
+  height: 500px;
+  width: 500px;
+  background-color: white;
+}

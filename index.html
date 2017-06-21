@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <script src="src/person.js"></script>
+  <script src="src/bmi_calculator.js"></script>
+  <script src='https://code.jquery.com/jquery-2.1.4.js'></script>
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $('#calculate').click(function () {
+        var w = parseFloat($('#weight').val());
+        var h = parseFloat($('#height').val());
+
+        var person = new Person({weight: w, height: h});
+        person.calculate_bmi();
+        $('#display_value').html('Your BMI is ' + person.bmiValue);
+        $('#display_message').html('and you are '+ person.bmiMessage);
+      });
+    });
+  </script>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+  <div class="container">
+    <h1>BMI calculator</h1>
+    <form>
+      <label>
+      <input type="radio" name="calc_method" value="met" checked> Metric </input>
+      <input type="radio" name="calc_method" value="imp"> Imperial </input>
+    </label>
+      <br>
+      <input type="text" id="weight" placeholder="Weight">
+      <input type="text" id="height" placeholder="Height">
+      <input type="button" id="calculate" value="Calculate">
+    </form>
+    <div>
+      <span id="display_value"></span>
+      <span id="display_message"></span>
+    </div>
+  </div>
+</body>
+</html>
