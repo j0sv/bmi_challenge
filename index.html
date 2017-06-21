@@ -15,6 +15,7 @@
         var h = parseFloat($('#height').val());
 
         var person = new Person({weight: w, height: h});
+
         person.calculate_bmi();
         $('#display_value').html('Your BMI is ' + person.bmiValue);
         $('#display_message').html('and you are '+ person.bmiMessage);
@@ -41,6 +42,7 @@
       <input type="button" id="calculate" value="Calculate">
     </form>
     <div>
+      <hr>
       <span id="display_value"></span>
       <span id="display_message"></span>
     </div>
