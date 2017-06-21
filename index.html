@@ -16,7 +16,7 @@
 
         var person = new Person({weight: w, height: h});
 
-        person.calculate_bmi();
+        person.calculate_bmi($("input:radio[name ='calc_method']:checked").val());
         $('#display_value').html('Your BMI is ' + person.bmiValue);
         $('#display_message').html('and you are '+ person.bmiMessage);
       });

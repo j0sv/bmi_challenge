@@ -3,14 +3,17 @@ function Person(attr) {
   this.height = attr.height;
 }
 
-  Person.prototype.calculate_bmi = function() {
+  Person.prototype.calculate_bmi = function(option) {
 
     calculator = new BMICalculator();
 
-    if ($("input:radio[name ='calc_method']:checked").val()!='met') {
-      calculator.imperical_bmi(this);
-    } else {
-      calculator.metric_bmi(this);
-    }
+/*alert ($("input:radio[name ='calc_method']:checked").val()!='met'); */
+if (option == 'met') {
+  calculator.metric_bmi(this);
+/*  alert('met' + this.weight + this.height+this.bmiMessage+this.bmiValue);*/
+} else {
+  calculator.imperical_bmi(this);
+/*  alert('imp' + this.weight + this.height);*/
+}
 
-  };
+};
